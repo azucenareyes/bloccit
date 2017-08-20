@@ -22,6 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+```
 							ORM
 ActiveRecod is an ORM: Object relational mapper that connects a database with actual Ruby objects. ActiveRecord follows
 convention over configuration so to tell a class that it's an
@@ -52,4 +54,13 @@ User.create( :name  => 'richard',
 
  1) rake db:create
  2) rake db:migrate
- 
+
+
+ After creating the migration files, we have to run  rails db:migrate
+ before rspec.
+ A Creating the Model and its supporting files.
+ 1) rails g to make the model
+ 2) rake or rails db:migrate
+ 3) check the schema.rb file
+B) Create the tests.
+```
