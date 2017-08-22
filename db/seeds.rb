@@ -14,6 +14,11 @@ end
 	)
 end
 
+	Post.find_or_create_by(
+		title: "josie",
+		body: "my princess"
+	)
+
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
