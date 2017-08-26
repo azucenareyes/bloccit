@@ -1,0 +1,31 @@
+<h1>All Posts</h1>
+
+<% @posts.each do |post| %>
+	<div class="media">
+	 	<div class="media-body">
+			<h4 class="media-heading">
+				<%= link_to post.title, post %>
+		  </h4>
+		</div>
+	</div>
+<% end %>
+
+<%#
+a loop that is running on the @posts instance variable
+for each post we want to stick in a paragraph that has
+a link called post.title that will take you to
+  /posts/13.json
+
+	{data1: [{d1:"something", {d2:"other"}}]}
+
+AJAX = Asychronous Javascript And XML/JSON
+
+document.XMLHttpRequest(url, function(a,b){ someVar = a })
+// present some view
+
+"RESTfull interface or API"
+
+Request: GET "/users/13.json"
+         POST "/users/14.json?name=josie;occupation=student"
+				 GET "/posts/?after=2016"
+%>
