@@ -9,9 +9,11 @@ RSpec.describe PostsController, type: :controller do
   # and this is so we can refer to it later.
   # This let(:my_post) will create an instance of Post
   # Each instance contains one argument, a hash
-  let(:my_post) { create_post }
+  let(:my_post) do
+    create_post()
+  end
 
-  def create_post do
+  def create_post
     Post.create!(
       title: RandomData.random_sentence,
       body:  RandomData.random_paragraph
@@ -33,19 +35,19 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe "handle offensive comments" do
-    it "every fifth post should have the title SPAM" do
-      # make 4 more posts
-      #check the fifth post to see if the title is spam
-      create_post
-      create_post
-      create_post
-      create_post
-
-      get :index
-      puts :posts
-    end
-  end
+  # describe "handle offensive comments" do
+  #   it "every fifth post should have the title SPAM" do
+  #     # mke 4 posts
+  #     #check the fifth post to see if the title is spam
+  #     (1..4).each do |i|
+  #       a_post = create_post
+  #       expect(a_post.title).not_to eq("SPAM")
+  #     end
+  # 
+  #     fifth_post = create_post
+  #     expect(fifth_post.title).to eq("SPAM")
+  #   end
+  # end
 
 
   # describe "GET #show" do
