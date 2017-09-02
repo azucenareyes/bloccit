@@ -32,15 +32,30 @@ RSpec.describe PostsController, type: :controller do
 
   end
 
-  describe "GET #show" do
+  describe "GET show" do
+
     it "returns http success" do
       #get is a method with on argument called :show which is a symbol.
       #the second argument is a hash with params: or params => with a value
       # which is also a hash with a key of id: or id => with a value of my_post.id
 
       get :show, params: { id: my_post.id }
+
       expect(response).to have_http_status(:success)
     end
+
+    it "renders the #show view" do
+      get :show, params: { id: my_post.id }
+
+      expect(response).to render_template :show
+    end
+
+    it "assigns my_post to @post" do
+      get :show, params: { id: my_post.id }
+
+      expect(assigns(:post)).to eq(my_post)
+    end
+
   end
 
   describe "GET #new" do
