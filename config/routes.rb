@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # get 'posts/show'
   # This will run the show method of class PostsController,
   # found in file posts_controller.rb.
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
 
   # Because this is a route file we can assume these
   # strings are URL fragments
+  resources :advertisements
 
   resources :posts
 # "welcome_about to about" it looks like they were essentially
