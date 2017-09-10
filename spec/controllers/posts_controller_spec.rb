@@ -1,23 +1,13 @@
 require 'rails_helper'
 
-#  Here we created a test for PostsController.
-#  "type: :controller" so we can do HTTP requests
 RSpec.describe PostsController, type: :controller do
-  # 8 We are defining a symbol named :my_post
-  # and this is so we can refer to it later.
-  # This let(:my_post) will create an instance of Post
-  # Each instance contains one argument, a hash
-  let(:my_post) do
-    Post.create!(
-      title: RandomData.random_sentence,
-      body:  RandomData.random_paragraph
-    )
-  end
+
+  let(:my_post) { Post.create!(title: RandomData.random_sentence, body:  RandomData.random_paragraph )}
+
   describe 'GET #index' do
     it 'returns http success' do
       get :index
 
-      # get( :index ) This test is simulating sending a get request.
       expect(response).to have_http_status(:success)
     end
 
@@ -30,10 +20,6 @@ RSpec.describe PostsController, type: :controller do
 
   describe 'GET show' do
     it 'returns http success' do
-      # get is a method with on argument called :show which is a symbol.
-      # the second argument is a hash with params: or params => with a value
-      # which is also a hash with a key of id: or id => with a value of my_post.id
-
       get :show, params: { id: my_post.id }
 
       expect(response).to have_http_status(:success)
@@ -70,7 +56,6 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe 'POST create' do
-    # #4
     it 'increases the number of Post by 1' do
       expect do
         post :create, params: {
