@@ -13,15 +13,12 @@ class PostsController < ApplicationController
     @post.title = params[:post][:title]
     @post.body = params[:post][:body]
     @topic = Topic.find(params[:topic_id])
-
     @post.topic = @topic
 
     if @post.save
-
       flash[:notice] = 'Post was saved.'
       redirect_to [@topic, @post]
     else
-
       flash.now[:alert] = 'There was an error saving the post. Please try again.'
       render :new
     end
