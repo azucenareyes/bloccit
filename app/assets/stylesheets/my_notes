@@ -1,0 +1,5 @@
+#1 Run rspec
+#2 commit changes
+#3 open check-21 and review the welcome folder
+#4 switch to assignment-21 and create the folder mkdir welcome, touch index and about.
+#5 run rspec: error rspec 
