@@ -24,11 +24,15 @@ module RandomData
 	end
 
 	def self.random_word
-	# We set letters from a-z we use .to_a to turn 
+	# We set letters from a-z we use .to_a to turn
 	# them into an array.
 		letters = ('a'..'z').to_a
 		letters.shuffle!
 		letters[0,rand(3..8)].join
+	end
+
+	def self.random_price
+		rand(1..10)
 	end
 end
 
