@@ -7,13 +7,21 @@ require 'random_data'
  end
  topics = Topic.all
 
-50.times do
-	Post.create!(
-	  topic: topics.sample,
-		title:  RandomData.random_sentence,
-		body:   RandomData.random_paragraph
-		)
-end
+ 50.times do
+ 	Post.create!(
+ 	  topic: topics.sample,
+ 		title:  RandomData.random_sentence,
+ 		body:   RandomData.random_paragraph
+ 		)
+ end
+ 10.times do
+ 	Spost.create!(
+ 	  topic: topics.sample,
+ 		title:  RandomData.random_sentence,
+ 		body:   RandomData.random_paragraph,
+    price: RandomData.random_price,
+ 		)
+ end
 	posts = Post.all
 
 100.times do
@@ -24,6 +32,7 @@ end
 end
 
 puts "Seed finished"
+puts "#{Spost.count} Sposts created"
 puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
