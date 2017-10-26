@@ -32,7 +32,7 @@ RSpec.describe SpostsController, type: :controller do
     it 'assigns my_post to @post' do
       get :show, params: { topic_id: my_topic.id, id: my_spost.id }
 
-      expect(assigns(:post)).to eq(my_spost)
+      expect(assigns(:spost)).to eq(my_spost)
     end
   end
 
