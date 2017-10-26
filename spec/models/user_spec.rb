@@ -31,6 +31,13 @@ RSpec.describe User, type: :model do
         email: 'user@bloccit.com'
       )
     end
+
+    it 'should capitalize names' do
+      user.name = 'bloccit user'
+      user.save
+      expect(user.name).to eq 'Bloccit User'
+    end
+
   end
 
   describe "invalid user" do
