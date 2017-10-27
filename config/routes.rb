@@ -4,13 +4,12 @@ Rails.application.routes.draw do
   # get 'sposts/new'
   #
   # get 'sposts/edit'
-
+resources :users, only: [:new, :create]
   resources :topics do
     resources :posts, except: [:index]
     resources :sposts, except: [:index]
-  end
-  resources :users, only: [:new, :create]
-  
+
+end
   get 'about' => 'welcome#about'
   root 'welcome#index'
 end

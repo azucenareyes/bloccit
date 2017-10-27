@@ -10,7 +10,7 @@ class User < ApplicationRecord
             presence: true,
             uniqueness: { case_sensitive: false },
             length: { minimum: 3, maximum: 254 }
-has_secure_password
+  has_secure_password
 # Adds methods to set and authenticate against a BCrypt password.
 # A password_digest attribute has to be present with this mechanism.
 # 2 attributes (virtual): password(set-up) and password_confirmation(save)

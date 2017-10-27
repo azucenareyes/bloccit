@@ -46,7 +46,4 @@ group :development, :test do
   gem 'shoulda'
 end
 gem 'bootstrap-sass'
-
- gem 'pry-rails'
-
- gem 'bcrypt'
+gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
