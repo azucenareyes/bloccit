@@ -1,4 +1,5 @@
 require 'random_data'
+
 5.times do
   User.create!(
     name:     RandomData.random_name,
@@ -24,6 +25,7 @@ topics = Topic.all
     body:   RandomData.random_paragraph
   )
 end
+
 10.times do
   Spost.create!(
     topic: topics.sample,
@@ -42,10 +44,10 @@ posts = Post.all
 end
 
 user = User.first
- user.update_attributes!(
-   email: 'sofia878@gmail.com',
-   password: 'helloworld'
- )
+user.update_attributes!(
+  email: 'sofia878@gmail.com',
+  password: 'helloworld'
+)
 
 puts 'Seed finished'
 puts "#{User.count} users created"
