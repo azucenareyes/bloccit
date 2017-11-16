@@ -9,6 +9,8 @@ RSpec.describe User, type: :model do
     )
   end
 
+  it { is_expected.to have_many(:posts) }
+
   # Shoulda tests for name
   it { is_expected.to validate_presence_of(:name) }
   it { is_expected.to validate_length_of(:name).is_at_least(1) }
